@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:carousel_slider/carousel_slider.dart';
+import 'widgets/carousel_widget.dart';
 
 void main() {
   runApp(const SentuhTanahku());
@@ -58,12 +59,11 @@ class HomePage extends StatelessWidget {
             ),
             Spacer(),
             TextButton.icon(
+              icon: const Icon(Icons.logout, color: Colors.white),
               label: const Text(
-                'Login',
+                'Logout',
                 style: TextStyle(color: Colors.white, fontWeight: FontWeight.bold),
               ),
-              icon: const Icon(Icons.logout, color: Colors.white),
-              iconAlignment: IconAlignment.end,
               onPressed: () {
                 // logout functionality here
               },
@@ -72,49 +72,61 @@ class HomePage extends StatelessWidget {
         ),
         backgroundColor: Colors.red[900],
       ),
-      body: Stack(
-      clipBehavior: Clip.none,
-      children: [
-        Container(
-          height: size,
-          decoration: BoxDecoration(
-            color: Colors.red[900],
-            borderRadius: const BorderRadius.only(
-            bottomLeft: Radius.circular(25.0),
-            bottomRight: Radius.circular(25.0),
-            ),
-          ) 
-        ),
-        Positioned(
-            bottom: -size * 0.45,
-            left: 0,
-            right: 0,
-            child: CarouselSlider(
-              options: CarouselOptions(
-                autoPlay: true,
-                viewportFraction: 1,
-                aspectRatio: 16 / 8,
-              ),
-              items: [
-                'https://picsum.photos/200/300',
-                'https://picsum.photos/200/300',
-                'https://picsum.photos/200/300',
-              ].map((i) {
-                return Builder(
-                  builder: (BuildContext context) {
-                    return Container(
-                      width: MediaQuery.of(context).size.width,
-                      margin: const EdgeInsets.symmetric(horizontal: 10.0), // Add margin to create space between items
-                      child: ClipRRect(
-                        borderRadius: BorderRadius.circular(15.0),
-                        child: Image.network(i, fit: BoxFit.cover),
+      body: 
+        ListView(
+          children: [
+            CarouselWidget(size: size),
+            SizedBox(height: size / 1.5),
+            // after carousel widget
+            Padding(
+              padding: const EdgeInsets.symmetric(horizontal: 10.0),
+              child: 
+                Row(
+                  mainAxisAlignment: MainAxisAlignment.start,
+                  children: [
+                    ElevatedButton(
+                      onPressed: () {
+                      // layanan functionality here
+                      },
+                      style: ElevatedButton.styleFrom(
+                      backgroundColor: Colors.red,
+                      shape: RoundedRectangleBorder(
+                        borderRadius: BorderRadius.circular(10.0),
                       ),
-                    );
-                  },
-                );
-              }).toList(),
-            ),
-          ),
+                      ),
+                      child: 
+                        Text(
+                        'Layanan',
+                        style: TextStyle(
+                          fontSize: 10,
+                          color: Colors.white,
+                        ),
+                      )
+                    ),
+                    const SizedBox(width: 10),
+                    ElevatedButton(
+                      onPressed: () {
+                      // layanan functionality here
+                      },
+                      style: ElevatedButton.styleFrom(
+                      backgroundColor: Colors.white,
+                      side: BorderSide(color: Colors.grey),
+                      shape: RoundedRectangleBorder(
+                        borderRadius: BorderRadius.circular(10.0),
+                      ),
+                      ),
+                      child: 
+                        Text(
+                        'Informasi',
+                        style: TextStyle(
+                          fontSize: 10,
+                          color: Colors.grey,
+                        ),
+                      )
+                    )
+                  ],
+                )
+              ),
         ],
       ),
     );
