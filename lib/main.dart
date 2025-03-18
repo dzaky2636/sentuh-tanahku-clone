@@ -26,37 +26,44 @@ class HomePage extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: Padding(
-          padding: const EdgeInsets.symmetric(vertical: 8.0),
-          child: Row(
-            children: [
-              Image.asset(
-          'assets/images/sentuh_tanahku_logo_withborder.png',
-          height: 35,
-              ),
-              const SizedBox(width: 10),
-              Column(
-          crossAxisAlignment: CrossAxisAlignment.start,
-          children: const [
-            Text(
-              'Sentuh Tanahku',
-              style: TextStyle(
-                fontSize: 14,
-                color: Colors.white,
-                fontWeight: FontWeight.bold,
-              ),
+        title: Row(
+          children: [
+            Image.asset(
+              'assets/images/sentuh_tanahku_logo_withborder.png',
+              height: 35,
             ),
-            Text(
-              'Kementrian ATR/BPN',
-              style: TextStyle(
-                fontSize: 10,
-                color: Colors.white70,
+            const SizedBox(width: 10),
+            Column(
+              crossAxisAlignment: CrossAxisAlignment.start,
+              children: const [
+                Text('Sentuh Tanahku',
+                  style: TextStyle(
+                    fontSize: 14,
+                    color: Colors.white,
+                    fontWeight: FontWeight.bold,
+                  ),
+                ),
+                Text(
+                  'Kementrian ATR/BPN',
+                    style: TextStyle(
+                    fontSize: 10,
+                    color: Colors.white70,
+                  ),
+                ),
+              ],
+            ),
+            Spacer(),
+            TextButton.icon(
+              icon: const Icon(Icons.logout, color: Colors.white),
+              label: const Text(
+              'Logout',
+              style: TextStyle(color: Colors.white, fontWeight: FontWeight.bold),
               ),
+              onPressed: () {
+              // logout functionality here
+              },
             ),
           ],
-              ),
-            ],
-          ),
         ),
         backgroundColor: Colors.red[900],
       ),
