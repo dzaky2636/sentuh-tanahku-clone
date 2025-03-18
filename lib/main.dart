@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:carousel_slider/carousel_slider.dart';
 
 void main() {
   runApp(const SentuhTanahku());
@@ -22,6 +23,8 @@ class SentuhTanahku extends StatelessWidget {
 class HomePage extends StatelessWidget {
   const HomePage({super.key});
 
+  final double size = 150.0;
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -36,7 +39,8 @@ class HomePage extends StatelessWidget {
             Column(
               crossAxisAlignment: CrossAxisAlignment.start,
               children: const [
-                Text('Sentuh Tanahku',
+                Text(
+                  'Sentuh Tanahku',
                   style: TextStyle(
                     fontSize: 14,
                     color: Colors.white,
@@ -45,7 +49,7 @@ class HomePage extends StatelessWidget {
                 ),
                 Text(
                   'Kementrian ATR/BPN',
-                    style: TextStyle(
+                  style: TextStyle(
                     fontSize: 10,
                     color: Colors.white70,
                   ),
@@ -54,28 +58,64 @@ class HomePage extends StatelessWidget {
             ),
             Spacer(),
             TextButton.icon(
-              icon: const Icon(Icons.logout, color: Colors.white),
               label: const Text(
-              'Logout',
-              style: TextStyle(color: Colors.white, fontWeight: FontWeight.bold),
+                'Login',
+                style: TextStyle(color: Colors.white, fontWeight: FontWeight.bold),
               ),
+              icon: const Icon(Icons.logout, color: Colors.white),
+              iconAlignment: IconAlignment.end,
               onPressed: () {
-              // logout functionality here
+                // logout functionality here
               },
             ),
           ],
         ),
         backgroundColor: Colors.red[900],
       ),
-      body: Center(
-        child: Column(
-          mainAxisAlignment: MainAxisAlignment.center,
-          children: const <Widget>[
-            Text(
-              'Sentuh Tanahku',
+      body: Stack(
+      clipBehavior: Clip.none,
+      children: [
+        Container(
+          height: size,
+          decoration: BoxDecoration(
+            color: Colors.red[900],
+            borderRadius: const BorderRadius.only(
+            bottomLeft: Radius.circular(25.0),
+            bottomRight: Radius.circular(25.0),
             ),
-          ],
+          ) 
         ),
+        Positioned(
+            bottom: -size * 0.45,
+            left: 0,
+            right: 0,
+            child: CarouselSlider(
+              options: CarouselOptions(
+                autoPlay: true,
+                viewportFraction: 1,
+                aspectRatio: 16 / 8,
+              ),
+              items: [
+                'https://picsum.photos/200/300',
+                'https://picsum.photos/200/300',
+                'https://picsum.photos/200/300',
+              ].map((i) {
+                return Builder(
+                  builder: (BuildContext context) {
+                    return Container(
+                      width: MediaQuery.of(context).size.width,
+                      margin: const EdgeInsets.symmetric(horizontal: 10.0), // Add margin to create space between items
+                      child: ClipRRect(
+                        borderRadius: BorderRadius.circular(15.0),
+                        child: Image.network(i, fit: BoxFit.cover),
+                      ),
+                    );
+                  },
+                );
+              }).toList(),
+            ),
+          ),
+        ],
       ),
     );
   }
