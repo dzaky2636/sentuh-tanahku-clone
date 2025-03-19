@@ -32,9 +32,9 @@ class CarouselWidget extends StatelessWidget {
               aspectRatio: 16 / 8,
             ),
             items: [
-              'https://picsum.photos/200/100?random=${DateTime.now().millisecondsSinceEpoch}',
-              'https://picsum.photos/200/100?random=${DateTime.now().millisecondsSinceEpoch + 1}',
-              'https://picsum.photos/200/100?random=${DateTime.now().millisecondsSinceEpoch + 2}',
+              'https://picsum.photos/200/100?random=${1}',
+              'https://picsum.photos/200/100?random=${2}',
+              'https://picsum.photos/200/100?random=${3}',
             ].map((i) {
               return Builder(
                 builder: (BuildContext context) {

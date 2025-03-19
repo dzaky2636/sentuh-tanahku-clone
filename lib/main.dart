@@ -4,10 +4,10 @@ import 'widgets/carousel_widget.dart';
 import 'widgets/button_row_widget.dart';
 import 'widgets/section_title_widget.dart';
 import 'widgets/horizontal_card_list_widget.dart';
-import 'widgets/layanan_information_buttons.dart';
+import 'widgets/layanan_information_buttons_container.dart';
 import 'widgets/gradient_container.dart';
 import 'widgets/appbar_title_widget.dart';
-import 'widgets/logout_button.dart';
+import 'widgets/login_button.dart';
 
 void main() {
   runApp(const SentuhTanahku());
@@ -28,13 +28,32 @@ class SentuhTanahku extends StatelessWidget {
   }
 }
 
-class HomePage extends StatelessWidget {
+class HomePage extends StatefulWidget {
   const HomePage({super.key});
 
-  final double size = 150.0;
+  @override
+  HomePageState createState() => HomePageState();
+}
+
+class HomePageState extends State<HomePage> {
+  bool isLayananActive = true;
+
+  void _handleLayananPressed() {
+    setState(() {
+      isLayananActive = true;
+    });
+  }
+
+  void _handleInformasiPressed() {
+    setState(() {
+      isLayananActive = false;
+    });
+  }
 
   @override
   Widget build(BuildContext context) {
+    final double size = 150.0;
+
     return Scaffold(
       appBar: AppBar(
         title: Row(
@@ -49,7 +68,7 @@ class HomePage extends StatelessWidget {
               subtitle: 'Kementrian ATR/BPN',
             ),
             Spacer(),
-            LogoutButton(
+            LoginButton(
               onPressed: () {
                 // logout functionality here
               },
@@ -62,9 +81,13 @@ class HomePage extends StatelessWidget {
         children: [
           CarouselWidget(size: size),
           SizedBox(height: size / 1.5),
-          const LayananInformationButtons(),
+          LayananInformationButtonsContainer(
+            isLayananActive: isLayananActive,
+            onLayananPressed: _handleLayananPressed,
+            onInformasiPressed: _handleInformasiPressed,
+          ),
           const SizedBox(height: 15),
-          const GradientContainer(buttonCount: 7),
+          GradientContainer(buttonCount: isLayananActive ? 7 : 4),
           const SizedBox(height: 30),
           const SectionTitleWidget(title: 'Laci'),
           const ButtonRowWidget(buttonCount: 3),

@@ -1,9 +1,9 @@
 import 'package:flutter/material.dart';
 
-class LogoutButton extends StatelessWidget {
+class LoginButton extends StatelessWidget {
   final VoidCallback onPressed;
 
-  const LogoutButton({Key? key, required this.onPressed}) : super(key: key);
+  const LoginButton({Key? key, required this.onPressed}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
@@ -12,7 +12,7 @@ class LogoutButton extends StatelessWidget {
       child: Row(
         children: const [
           Text(
-            'Logout',
+            'Login',
             style: TextStyle(
               color: Colors.white,
               fontWeight: FontWeight.bold,
