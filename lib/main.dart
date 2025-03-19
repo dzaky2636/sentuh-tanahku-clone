@@ -1,6 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:carousel_slider/carousel_slider.dart';
 import 'widgets/carousel_widget.dart';
+import 'widgets/button_row_widget.dart';
+import 'widgets/section_title_widget.dart';
 
 void main() {
   runApp(const SentuhTanahku());
@@ -77,7 +79,8 @@ class HomePage extends StatelessWidget {
           children: [
             CarouselWidget(size: size),
             SizedBox(height: size / 1.5),
-            // after carousel widget
+            
+            /* START: LAYANAN & INFORMASI BUTTONS */
             Padding(
               padding: const EdgeInsets.symmetric(horizontal: 15.0),
               child: 
@@ -128,7 +131,6 @@ class HomePage extends StatelessWidget {
             )
           ),
             Container(
-                padding: const EdgeInsets.symmetric(vertical: 20.0),
               decoration: const BoxDecoration(
               gradient: LinearGradient(
                 begin: Alignment.topCenter,
@@ -138,96 +140,15 @@ class HomePage extends StatelessWidget {
               ),
               child: SingleChildScrollView(
               scrollDirection: Axis.horizontal,
-              child: Row(
-                children: List.generate(7, (index) {
-                return Padding(
-                  padding: const EdgeInsets.symmetric(horizontal: 15.0),
-                  child: Column(
-                  children: [
-                    GestureDetector(
-                    onTap: () {
-                      // button functionality here
-                    },
-                    child: CircleAvatar(
-                      radius: 25,
-                      backgroundImage: AssetImage('assets/images/image_$index.png'),
-                    ),
-                    ),
-                    const SizedBox(height: 5),
-                    Text(
-                    'Button $index',
-                    style: const TextStyle(
-                      fontSize: 12,
-                      color: Colors.black,
-                    ),
-                    ),
-                  ],
-                  ),
-                );
-                }),
-              ),
+              child: 
+                ButtonRowWidget(buttonCount: 7)
               ),
             ),
             SizedBox(height: 40),
-            Padding(
-              padding: const EdgeInsets.symmetric(horizontal: 15.0),
-              child: 
-                Text(
-                      'Laci',
-                      style: TextStyle(
-                        fontSize: 18,
-                        fontWeight: FontWeight.bold,
-                        color: Colors.black,
-                      ),
-                    )
-            ),
-            Container(
-              padding: const EdgeInsets.symmetric(vertical: 20.0),
-              child: SingleChildScrollView(
-              scrollDirection: Axis.horizontal,
-              child: Row(
-                children: List.generate(3, (index) {
-                return Padding(
-                  padding: const EdgeInsets.symmetric(horizontal: 15.0),
-                  child: Column(
-                  children: [
-                    GestureDetector(
-                    onTap: () {
-                      // button functionality here
-                    },
-                    child: CircleAvatar(
-                      radius: 25,
-                      backgroundImage: AssetImage('assets/images/image_$index.png'),
-                    ),
-                    ),
-                    const SizedBox(height: 5),
-                    Text(
-                    'Button $index',
-                    style: const TextStyle(
-                      fontSize: 12,
-                      color: Colors.black,
-                    ),
-                    ),
-                  ],
-                  ),
-                );
-                }),
-              ),
-              ),
-            ),
+            SectionTitleWidget(title: 'Laci'),
+            ButtonRowWidget(buttonCount: 3),
             SizedBox(height: 20),
-            Padding(
-              padding: const EdgeInsets.symmetric(horizontal: 15.0),
-              child: 
-                Text(
-                      'Siaran Pers Kementrian',
-                      style: TextStyle(
-                        fontSize: 18,
-                        fontWeight: FontWeight.bold,
-                        color: Colors.black,
-                      ),
-                    )
-            ),
+            SectionTitleWidget(title: 'Siaran Pers Kementrian'),
             Container(
               padding: const EdgeInsets.symmetric(vertical: 20.0),
               child: SingleChildScrollView(
