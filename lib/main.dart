@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:carousel_slider/carousel_slider.dart';
 import 'widgets/carousel_widget.dart';
 import 'widgets/button_row_widget.dart';
 import 'widgets/section_title_widget.dart';
@@ -10,6 +9,8 @@ import 'widgets/appbar_title_widget.dart';
 import 'widgets/login_button.dart';
 import 'settings.dart';
 
+import 'login_page.dart';
+
 void main() {
   runApp(const SentuhTanahku());
 }
@@ -17,13 +18,11 @@ void main() {
 class SentuhTanahku extends StatelessWidget {
   const SentuhTanahku({super.key});
 
-
-
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
       title: appTitle,
-      home: const HomePage(),
+      home: const LoginPage(),
     );
   }
 }
@@ -70,7 +69,10 @@ class HomePageState extends State<HomePage> {
             Spacer(),
             LoginButton(
               onPressed: () {
-                // logout functionality here
+                Navigator.push(
+                  context,
+                  MaterialPageRoute(builder: (context) => const LoginPage()),
+                );
               },
             ),
           ],
