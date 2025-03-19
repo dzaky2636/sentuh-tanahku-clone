@@ -3,6 +3,7 @@ import 'package:carousel_slider/carousel_slider.dart';
 import 'widgets/carousel_widget.dart';
 import 'widgets/button_row_widget.dart';
 import 'widgets/section_title_widget.dart';
+import 'widgets/horizontal_card_list_widget.dart';
 
 void main() {
   runApp(const SentuhTanahku());
@@ -144,60 +145,21 @@ class HomePage extends StatelessWidget {
                 ButtonRowWidget(buttonCount: 7)
               ),
             ),
-            SizedBox(height: 40),
+            SizedBox(height: 30),
             SectionTitleWidget(title: 'Laci'),
             ButtonRowWidget(buttonCount: 3),
             SizedBox(height: 20),
             SectionTitleWidget(title: 'Siaran Pers Kementrian'),
-            Container(
-              padding: const EdgeInsets.symmetric(vertical: 20.0),
-              child: SingleChildScrollView(
-                scrollDirection: Axis.horizontal,
-                child: Row(
-                  children: List.generate(5, (index) {
-                    return Padding(
-                      padding: const EdgeInsets.symmetric(horizontal: 10.0),
-                      child: Card(
-                        elevation: 5,
-                        shape: RoundedRectangleBorder(
-                          borderRadius: BorderRadius.circular(10.0),
-                        ),
-                        child: Container(
-                          width: 200,
-                          child: Column(
-                            crossAxisAlignment: CrossAxisAlignment.start,
-                            children: [
-                              ClipRRect(
-                                borderRadius: const BorderRadius.only(
-                                  topLeft: Radius.circular(10.0),
-                                  topRight: Radius.circular(10.0),
-                                ),
-                                child: Image.asset(
-                                  'assets/images/sentuh_tanahku_logo_withborder.png',
-                                  height: 100,
-                                  width: 200,
-                                  fit: BoxFit.cover,
-                                ),
-                              ),
-                              Padding(
-                                padding: const EdgeInsets.all(10.0),
-                                child: Text(
-                                  'News Title $index',
-                                  style: const TextStyle(
-                                    fontSize: 14,
-                                    fontWeight: FontWeight.bold,
-                                  ),
-                                ),
-                              ),
-                            ],
-                          ),
-                        ),
-                      ),
-                    );
-                  }),
-                ),
-              ),
-            ),
+            SizedBox(height: 15),
+            HorizontalCardListWidget(itemCount: 5),
+            SizedBox(height: 20),
+            SectionTitleWidget(title: 'Pengumuman'),
+            SizedBox(height: 15),
+            HorizontalCardListWidget(itemCount: 5),
+            SizedBox(height: 20),
+            SectionTitleWidget(title: 'Ikuti Kanal Video Kami'),
+            SizedBox(height: 15),
+            HorizontalCardListWidget(itemCount: 5),
         ],
       ),
     );
