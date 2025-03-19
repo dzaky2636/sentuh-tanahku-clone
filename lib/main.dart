@@ -103,6 +103,16 @@ class HomePageState extends State<HomePage> {
           const SectionTitleWidget(title: 'Ikuti Kanal Video Kami'),
           const SizedBox(height: 15),
           const HorizontalCardListWidget(itemCount: 5),
+          const SizedBox(height: 20),
+          Center(
+            child: Text(
+              'App Version: $appVersion',
+              style: TextStyle(
+                fontSize: 12,
+                color: Colors.grey,
+              ),
+            ),
+          ),
         ],
       ),
     );
