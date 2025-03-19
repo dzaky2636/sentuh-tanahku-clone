@@ -8,6 +8,7 @@ import 'widgets/layanan_information_buttons_container.dart';
 import 'widgets/gradient_container.dart';
 import 'widgets/appbar_title_widget.dart';
 import 'widgets/login_button.dart';
+import 'settings.dart';
 
 void main() {
   runApp(const SentuhTanahku());
@@ -16,13 +17,12 @@ void main() {
 class SentuhTanahku extends StatelessWidget {
   const SentuhTanahku({super.key});
 
+
+
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
-      title: 'Sentuh Tanahku',
-      theme: ThemeData(
-        primarySwatch: Colors.red,
-      ),
+      title: appTitle,
       home: const HomePage(),
     );
   }
@@ -63,9 +63,9 @@ class HomePageState extends State<HomePage> {
               height: 35,
             ),
             const SizedBox(width: 10),
-            const AppBarTitleWidget(
-              title: 'Sentuh Tanahku',
-              subtitle: 'Kementrian ATR/BPN',
+            AppBarTitleWidget(
+              title: appTitle,
+              subtitle: appSubtitle,
             ),
             Spacer(),
             LoginButton(
@@ -75,7 +75,7 @@ class HomePageState extends State<HomePage> {
             ),
           ],
         ),
-        backgroundColor: Colors.red[900],
+        backgroundColor: primaryColor,
       ),
       body: ListView(
         children: [

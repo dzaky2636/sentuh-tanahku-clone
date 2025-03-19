@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:carousel_slider/carousel_slider.dart';
+import '../settings.dart';
 
 class CarouselWidget extends StatelessWidget {
   final double size;
@@ -14,7 +15,7 @@ class CarouselWidget extends StatelessWidget {
         Container(
           height: size,
           decoration: BoxDecoration(
-            color: Colors.red[900],
+            color: primaryColor,
             borderRadius: const BorderRadius.only(
               bottomLeft: Radius.circular(25.0),
               bottomRight: Radius.circular(25.0),

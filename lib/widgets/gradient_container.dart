@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'button_row_widget.dart';
+import '../settings.dart';
 
 class GradientContainer extends StatelessWidget {
   final int buttonCount;
@@ -9,11 +10,11 @@ class GradientContainer extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Container(
-      decoration: const BoxDecoration(
+      decoration: BoxDecoration(
         gradient: LinearGradient(
           begin: Alignment.topCenter,
           end: Alignment.bottomCenter,
-          colors: [Colors.white, Color.fromARGB(255, 246, 237, 242)],
+          colors: [Colors.white.withOpacity(0.2), primaryColor!.withOpacity(0.2)],
         ),
       ),
       child: SingleChildScrollView(

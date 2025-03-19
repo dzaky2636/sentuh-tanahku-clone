@@ -1,3 +1,4 @@
+import 'package:app/settings.dart';
 import 'package:flutter/material.dart';
 
 class LayananInformationButton extends StatelessWidget {
@@ -17,7 +18,7 @@ class LayananInformationButton extends StatelessWidget {
     return ElevatedButton(
       onPressed: onPressed,
       style: ElevatedButton.styleFrom(
-        backgroundColor: isActive ? Colors.red : Colors.white,
+        backgroundColor: isActive ? primaryColor : Colors.white,
         padding: const EdgeInsets.symmetric(horizontal: 14.0, vertical: 1.0),
         shape: RoundedRectangleBorder(
           borderRadius: BorderRadius.circular(11.0),
