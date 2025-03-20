@@ -2,6 +2,7 @@ import 'package:app/widgets/account_prompt.dart';
 import 'package:flutter/material.dart';
 import 'settings.dart';
 import 'widgets/custom_elevated_button.dart';
+import 'widgets/secondary_custom_elevated_button.dart';
 import 'widgets/text_input.dart';
 import 'widgets/password_input.dart';
 import 'widgets/page_heading.dart';
@@ -64,6 +65,13 @@ class DaftarPage extends StatelessWidget {
                     },
                     label: 'Daftar'
                   ),
+                  const SizedBox(height: 20),
+                  SecondaryCustomElevatedButton(
+                    onPressed: () {
+                      // FAQ functionality here
+                    },
+                    label: 'FAQ / Pusat Bantuan'
+                  )
                 ],
               ),
             ),

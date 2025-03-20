@@ -9,7 +9,8 @@ import 'widgets/account_prompt.dart';
 import 'widgets/page_heading.dart';
 import 'widgets/page_heading_subtitle.dart';
 import 'daftar_page.dart';
-import 'main.dart';
+import 'forget_password_page.dart';
+// import 'main.dart';
 
 class LoginPage extends StatelessWidget {
   const LoginPage({super.key});
@@ -49,17 +50,20 @@ class LoginPage extends StatelessWidget {
                     labelText: 'Password',
                     hintText: 'Masukkan Password',
                   ), 
+                  ForgotPasswordButton(
+                    onPressed: () {
+                      Navigator.push(
+                        context,
+                        MaterialPageRoute(builder: (context) => const ForgetPasswordPage()),
+                      );
+                    },
+                  ),
                   const SizedBox(height: 20),
                   CustomElevatedButton(
                     onPressed: () {
                       // Login
                     },
                     label: 'Login'
-                  ),
-                  ForgotPasswordButton(
-                    onPressed: () {
-                      // Navigate to forget password page
-                    },
                   ),
                   const SizedBox(height: 20),
                   const DividerWithText(text: 'atau'),
