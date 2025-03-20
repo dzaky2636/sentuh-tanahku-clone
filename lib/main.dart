@@ -22,6 +22,9 @@ class SentuhTanahku extends StatelessWidget {
   Widget build(BuildContext context) {
     return MaterialApp(
       title: appTitle,
+      theme: ThemeData(
+        fontFamily: 'Poppins',
+      ),
       home: const LoginPage(),
     );
   }
