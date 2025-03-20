@@ -25,7 +25,7 @@ class SentuhTanahku extends StatelessWidget {
       theme: ThemeData(
         fontFamily: 'Poppins',
       ),
-      home: const LoginPage(),
+      home: const HomePage(),
     );
   }
 }
@@ -82,43 +82,51 @@ class HomePageState extends State<HomePage> {
         ),
         backgroundColor: primaryColor,
       ),
-      body: ListView(
-        children: [
-          CarouselWidget(size: size),
-          SizedBox(height: size / 1.5),
-          LayananInformationButtonsContainer(
-            isLayananActive: isLayananActive,
-            onLayananPressed: _handleLayananPressed,
-            onInformasiPressed: _handleInformasiPressed,
-          ),
-          const SizedBox(height: 15),
-          GradientContainer(buttonCount: isLayananActive ? 7 : 4),
-          const SizedBox(height: 30),
-          const SectionTitleWidget(title: 'Laci'),
-          const ButtonRowWidget(buttonCount: 3),
-          const SizedBox(height: 20),
-          const SectionTitleWidget(title: 'Siaran Pers Kementrian'),
-          const SizedBox(height: 15),
-          const HorizontalCardListWidget(itemCount: 5),
-          const SizedBox(height: 20),
-          const SectionTitleWidget(title: 'Pengumuman'),
-          const SizedBox(height: 15),
-          const HorizontalCardListWidget(itemCount: 5),
-          const SizedBox(height: 20),
-          const SectionTitleWidget(title: 'Ikuti Kanal Video Kami'),
-          const SizedBox(height: 15),
-          const HorizontalCardListWidget(itemCount: 5),
-          const SizedBox(height: 20),
-          Center(
-            child: Text(
-              'App Version: $appVersion',
-              style: TextStyle(
-                fontSize: 12,
-                color: Colors.grey,
-              ),
+      body: Container(
+        decoration: BoxDecoration(
+          color: primaryColor!.withOpacity(0.05), // Set the background color with low opacity
+        ),
+        child: ListView(
+          children: [
+            CarouselWidget(size: size),
+            SizedBox(height: size / 1.5),
+            LayananInformationButtonsContainer(
+              isLayananActive: isLayananActive,
+              onLayananPressed: _handleLayananPressed,
+              onInformasiPressed: _handleInformasiPressed,
             ),
-          ),
-        ],
+            const SizedBox(height: 15),
+            GradientContainer(buttonCount: isLayananActive ? 7 : 4),
+            const SizedBox(height: 30),
+            const SectionTitleWidget(title: 'Laci'),
+            const ButtonRowWidget(buttonCount: 3),
+            const SizedBox(height: 20),
+            const SectionTitleWidget(title: 'Siaran Pers Kementrian'),
+            const SizedBox(height: 15),
+            const HorizontalCardListWidget(itemCount: 5),
+            const SizedBox(height: 20),
+            const SectionTitleWidget(title: 'Pengumuman'),
+            const SizedBox(height: 15),
+            const HorizontalCardListWidget(itemCount: 5),
+            const SizedBox(height: 20),
+            const SectionTitleWidget(title: 'Ikuti Kanal Video Kami'),
+            const SizedBox(height: 15),
+            const HorizontalCardListWidget(itemCount: 5),
+            const SizedBox(height: 20),
+            Padding(
+              padding: const EdgeInsets.all(20), 
+              child: Center(
+                child: Text(
+                  'App Version: $appVersion',
+                    style: const TextStyle(
+                    fontSize: 12,
+                    color: Colors.grey,
+                  ),
+                ),
+              )
+            ),
+          ],
+        ),
       ),
     );
   }
