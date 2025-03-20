@@ -1,3 +1,4 @@
+import 'package:app/widgets/account_prompt.dart';
 import 'package:flutter/material.dart';
 import 'settings.dart';
 import 'widgets/custom_elevated_button.dart';
@@ -5,30 +6,27 @@ import 'widgets/text_input.dart';
 import 'widgets/password_input.dart';
 import 'widgets/page_heading.dart';
 import 'widgets/page_heading_subtitle.dart';
+import 'login_page.dart';
+import 'main.dart';
 
 class DaftarPage extends StatelessWidget {
-  const DaftarPage({Key? key}) : super(key: key);
+  const DaftarPage({super.key});
 
   @override
   Widget build(BuildContext context) {
     return Scaffold(
       body: Container(
         decoration: BoxDecoration(
-          color: primaryColor!.withOpacity(0.05), // Set the background color with low opacity
+          color: primaryColor!.withOpacity(0.05), 
         ),
         child: Column(
           children: [
             Padding(
-              padding: const EdgeInsets.all(15),
+              padding: EdgeInsets.all(15), 
               child: Align(
-                alignment: Alignment.centerLeft,
-                child: IconButton(
-                  icon: const Icon(Icons.arrow_back, color: Colors.black),
-                  onPressed: () {
-                    Navigator.of(context).pop();
-                  },
-                ),
-              ),
+                alignment: Alignment.centerLeft, 
+                child: BackButton()
+              )
             ),
             Padding(
               padding: const EdgeInsets.all(20.0),
@@ -69,6 +67,17 @@ class DaftarPage extends StatelessWidget {
                 ],
               ),
             ),
+            Spacer(),
+            AccountPrompt(
+              promptText: 'Sudah punya akun? ',
+              actionText: 'Login',
+              onPressed: () {
+                Navigator.push(
+                  context,
+                  MaterialPageRoute(builder: (context) => const LoginPage()),
+                );
+              },
+            )
           ],
         ),
       ),

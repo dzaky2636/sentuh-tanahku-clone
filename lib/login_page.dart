@@ -5,12 +5,14 @@ import 'widgets/forgot_password_button.dart';
 import 'widgets/divider_with_text.dart';
 import 'widgets/text_input.dart'; 
 import 'widgets/password_input.dart'; 
-import 'widgets/register_prompt.dart';
+import 'widgets/account_prompt.dart'; 
 import 'widgets/page_heading.dart';
 import 'widgets/page_heading_subtitle.dart';
+import 'daftar_page.dart';
+import 'main.dart';
 
 class LoginPage extends StatelessWidget {
-  const LoginPage({Key? key}) : super(key: key);
+  const LoginPage({super.key});
 
   @override
   Widget build(BuildContext context) {
@@ -21,7 +23,13 @@ class LoginPage extends StatelessWidget {
         ),
         child: Column(
           children: [
-            Padding(padding: EdgeInsets.all(15), child: const Align(alignment: Alignment.centerLeft, child: BackButton())),
+            Padding(
+              padding: EdgeInsets.all(15), 
+              child: Align(
+                alignment: Alignment.centerLeft, 
+                child: BackButton()
+              )
+            ),
             Padding(
               padding: const EdgeInsets.all(20.0),
               child: Column(
@@ -67,9 +75,14 @@ class LoginPage extends StatelessWidget {
               ),
             ),
             Spacer(),
-            RegisterPrompt(
+            AccountPrompt(
+              promptText: 'Belum punya akun? ',
+              actionText: 'Daftar',
               onPressed: () {
-                // Navigate to register page
+                Navigator.push(
+                  context,
+                  MaterialPageRoute(builder: (context) => const DaftarPage()),
+                );
               },
             ),
           ],

@@ -25,7 +25,7 @@ class SentuhTanahku extends StatelessWidget {
       theme: ThemeData(
         fontFamily: 'Poppins',
       ),
-      home: const LoginPage(),
+      home: const HomePage(),
     );
   }
 }
