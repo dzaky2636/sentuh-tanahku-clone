@@ -10,7 +10,6 @@ import 'widgets/page_heading.dart';
 import 'widgets/page_heading_subtitle.dart';
 import 'daftar_page.dart';
 import 'forget_password_page.dart';
-// import 'main.dart';
 
 class LoginPage extends StatelessWidget {
   const LoginPage({super.key});
@@ -26,10 +25,7 @@ class LoginPage extends StatelessWidget {
           children: [
             Padding(
               padding: EdgeInsets.all(15), 
-              child: Align(
-                alignment: Alignment.centerLeft, 
-                child: BackButton()
-              )
+              child: Align(alignment: Alignment.centerLeft, child: BackButton())
             ),
             Padding(
               padding: const EdgeInsets.all(20.0),

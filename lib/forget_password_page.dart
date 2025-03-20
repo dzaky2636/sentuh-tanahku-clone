@@ -18,16 +18,8 @@ class ForgetPasswordPage extends StatelessWidget {
         child: Column(
           children: [
             Padding(
-              padding: const EdgeInsets.all(15),
-              child: Align(
-                alignment: Alignment.centerLeft,
-                child: IconButton(
-                  icon: const Icon(Icons.arrow_back, color: Colors.black),
-                  onPressed: () {
-                    Navigator.of(context).pop();
-                  },
-                ),
-              ),
+              padding: EdgeInsets.all(15), 
+              child: Align(alignment: Alignment.centerLeft, child: BackButton())
             ),
             Padding(
               padding: const EdgeInsets.all(20.0),

@@ -8,7 +8,6 @@ import 'widgets/password_input.dart';
 import 'widgets/page_heading.dart';
 import 'widgets/page_heading_subtitle.dart';
 import 'login_page.dart';
-import 'main.dart';
 
 class DaftarPage extends StatelessWidget {
   const DaftarPage({super.key});
@@ -24,10 +23,7 @@ class DaftarPage extends StatelessWidget {
           children: [
             Padding(
               padding: EdgeInsets.all(15), 
-              child: Align(
-                alignment: Alignment.centerLeft, 
-                child: BackButton()
-              )
+              child: Align(alignment: Alignment.centerLeft, child: BackButton())
             ),
             Padding(
               padding: const EdgeInsets.all(20.0),
