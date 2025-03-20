@@ -7,11 +7,11 @@ class LayananInformationButton extends StatelessWidget {
   final VoidCallback onPressed;
 
   const LayananInformationButton({
-    Key? key,
+    super.key,
     required this.label,
     required this.isActive,
     required this.onPressed,
-  }) : super(key: key);
+  });
 
   @override
   Widget build(BuildContext context) {

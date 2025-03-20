@@ -1,9 +1,9 @@
 import 'package:flutter/material.dart';
 
-class HorizontalCardListWidget extends StatelessWidget {
+class HorizontalCardList extends StatelessWidget {
   final int itemCount;
 
-  const HorizontalCardListWidget({Key? key, required this.itemCount}) : super(key: key);
+  const HorizontalCardList({super.key, required this.itemCount});
 
   @override
   Widget build(BuildContext context) {

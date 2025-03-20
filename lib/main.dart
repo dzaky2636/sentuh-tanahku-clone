@@ -1,11 +1,11 @@
 import 'package:flutter/material.dart';
-import 'widgets/carousel_widget.dart';
-import 'widgets/button_row_widget.dart';
-import 'widgets/section_title_widget.dart';
-import 'widgets/horizontal_card_list_widget.dart';
+import 'widgets/carousel.dart';
+import 'widgets/button_row.dart';
+import 'widgets/section_title.dart';
+import 'widgets/horizontal_card_list.dart';
 import 'widgets/layanan_information_buttons_container.dart';
 import 'widgets/gradient_container.dart';
-import 'widgets/appbar_title_widget.dart';
+import 'widgets/appbar_title.dart';
 import 'widgets/login_button.dart';
 import 'settings.dart';
 
@@ -65,7 +65,7 @@ class HomePageState extends State<HomePage> {
               height: 35,
             ),
             const SizedBox(width: 10),
-            AppBarTitleWidget(
+            AppBarTitle(
               title: appTitle,
               subtitle: appSubtitle,
             ),
@@ -88,7 +88,7 @@ class HomePageState extends State<HomePage> {
         ),
         child: ListView(
           children: [
-            CarouselWidget(size: size),
+            Carousel(size: size),
             SizedBox(height: size / 1.5),
             LayananInformationButtonsContainer(
               isLayananActive: isLayananActive,
@@ -98,20 +98,20 @@ class HomePageState extends State<HomePage> {
             const SizedBox(height: 15),
             GradientContainer(buttonCount: isLayananActive ? 7 : 4),
             const SizedBox(height: 30),
-            const SectionTitleWidget(title: 'Laci'),
-            const ButtonRowWidget(buttonCount: 3),
+            const SectionTitle(title: 'Laci'),
+            const ButtonRow(buttonCount: 3),
             const SizedBox(height: 20),
-            const SectionTitleWidget(title: 'Siaran Pers Kementrian'),
+            const SectionTitle(title: 'Siaran Pers Kementrian'),
             const SizedBox(height: 15),
-            const HorizontalCardListWidget(itemCount: 5),
+            const HorizontalCardList(itemCount: 5),
             const SizedBox(height: 20),
-            const SectionTitleWidget(title: 'Pengumuman'),
+            const SectionTitle(title: 'Pengumuman'),
             const SizedBox(height: 15),
-            const HorizontalCardListWidget(itemCount: 5),
+            const HorizontalCardList(itemCount: 5),
             const SizedBox(height: 20),
-            const SectionTitleWidget(title: 'Ikuti Kanal Video Kami'),
+            const SectionTitle(title: 'Ikuti Kanal Video Kami'),
             const SizedBox(height: 15),
-            const HorizontalCardListWidget(itemCount: 5),
+            const HorizontalCardList(itemCount: 5),
             const SizedBox(height: 20),
             Padding(
               padding: const EdgeInsets.all(20), 

@@ -7,11 +7,11 @@ class CustomElevatedButton extends StatelessWidget {
   final String? iconPath;
 
   const CustomElevatedButton({
-    Key? key,
+    super.key,
     required this.onPressed,
     required this.label,
     this.iconPath,
-  }) : super(key: key);
+  });
 
   @override
   Widget build(BuildContext context) {

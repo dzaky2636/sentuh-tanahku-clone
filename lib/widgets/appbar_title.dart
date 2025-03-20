@@ -1,14 +1,14 @@
 import 'package:flutter/material.dart';
 
-class AppBarTitleWidget extends StatelessWidget {
+class AppBarTitle extends StatelessWidget {
   final String title;
   final String subtitle;
 
-  const AppBarTitleWidget({
-    Key? key,
+  const AppBarTitle({
+    super.key,
     required this.title,
     required this.subtitle,
-  }) : super(key: key);
+  });
 
   @override
   Widget build(BuildContext context) {

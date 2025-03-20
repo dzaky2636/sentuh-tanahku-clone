@@ -1,9 +1,9 @@
 import 'package:flutter/material.dart';
 
-class ButtonRowWidget extends StatelessWidget {
+class ButtonRow extends StatelessWidget {
   final int buttonCount;
 
-  const ButtonRowWidget({Key? key, required this.buttonCount}) : super(key: key);
+  const ButtonRow({super.key, required this.buttonCount});
 
   @override
   Widget build(BuildContext context) {

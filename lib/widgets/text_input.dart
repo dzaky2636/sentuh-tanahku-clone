@@ -6,11 +6,11 @@ class TextInput extends StatelessWidget {
   final bool obscureText;
 
   const TextInput({
-    Key? key,
+    super.key,
     required this.labelText,
     required this.hintText,
     this.obscureText = false,
-  }) : super(key: key);
+  });
 
   @override
   Widget build(BuildContext context) {

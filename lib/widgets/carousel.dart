@@ -2,10 +2,10 @@ import 'package:flutter/material.dart';
 import 'package:carousel_slider/carousel_slider.dart';
 import '../settings.dart';
 
-class CarouselWidget extends StatelessWidget {
+class Carousel extends StatelessWidget {
   final double size;
 
-  const CarouselWidget({Key? key, required this.size}) : super(key: key);
+  const Carousel({super.key, required this.size});
 
   @override
   Widget build(BuildContext context) {

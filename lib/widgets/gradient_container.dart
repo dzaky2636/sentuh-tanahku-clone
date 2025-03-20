@@ -1,11 +1,11 @@
 import 'package:flutter/material.dart';
-import 'button_row_widget.dart';
+import 'button_row.dart';
 import '../settings.dart';
 
 class GradientContainer extends StatelessWidget {
   final int buttonCount;
 
-  const GradientContainer({Key? key, required this.buttonCount}) : super(key: key);
+  const GradientContainer({super.key, required this.buttonCount});
 
   @override
   Widget build(BuildContext context) {
@@ -19,7 +19,7 @@ class GradientContainer extends StatelessWidget {
       ),
       child: SingleChildScrollView(
         scrollDirection: Axis.horizontal,
-        child: ButtonRowWidget(buttonCount: buttonCount),
+        child: ButtonRow(buttonCount: buttonCount),
       ),
     );
   }
