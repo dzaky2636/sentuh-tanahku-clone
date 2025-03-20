@@ -37,7 +37,10 @@ class LoginPage extends StatelessWidget {
                     hintText: 'Masukkan Email atau Username',
                   ),
                   const SizedBox(height: 20),
-                  const PasswordInput(), 
+                  const PasswordInput(
+                    labelText: 'Password',
+                    hintText: 'Masukkan Password',
+                  ), 
                   const SizedBox(height: 20),
                   CustomElevatedButton(
                     onPressed: () {
