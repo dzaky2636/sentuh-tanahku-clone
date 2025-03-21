@@ -8,8 +8,8 @@ import 'widgets/gradient_container.dart';
 import 'widgets/appbar_title.dart';
 import 'widgets/login_button.dart';
 import 'settings.dart';
-
 import 'login_page.dart';
+import 'models/card_item.dart';
 
 void main() {
   runApp(const SentuhTanahku());
@@ -55,6 +55,34 @@ class HomePageState extends State<HomePage> {
   @override
   Widget build(BuildContext context) {
     final double size = 150.0;
+
+    final List<CardItem> cardItems = [
+      CardItem(
+        imageUrl: 'https://picsum.photos/200/100?random=1',
+        content: 'Detik.com',
+        url: 'https://news.detik.com/',
+      ),
+      CardItem(
+        imageUrl: 'https://akcdn.detik.net.id/community/media/visual/2024/09/30/rapat-paripurna-akhir-periode-dpr-2019-2024-dwidetikcom-2_169.jpeg?w=700&q=90',
+        content: ' DPR Sahkan Revisi UU TNI Hari Ini',
+        url: 'https://news.detik.com/berita/d-7832107/dpr-sahkan-revisi-uu-tni-hari-ini',
+      ),
+      CardItem(
+        imageUrl: 'https://picsum.photos/200/100?random=3',
+        content: 'Content for card 3',
+        url: 'https://example.com/3',
+      ),
+      CardItem(
+        imageUrl: 'https://picsum.photos/200/100?random=4',
+        content: 'Content for card 4',
+        url: 'https://example.com/4',
+      ),
+      CardItem(
+        imageUrl: 'https://picsum.photos/200/100?random=5',
+        content: 'Content for card 5',
+        url: 'https://example.com/5',
+      ),
+    ];
 
     return Scaffold(
       appBar: AppBar(
@@ -103,15 +131,15 @@ class HomePageState extends State<HomePage> {
             const SizedBox(height: 20),
             const SectionTitle(title: 'Siaran Pers Kementrian'),
             const SizedBox(height: 15),
-            const HorizontalCardList(itemCount: 5),
+            HorizontalCardList(items: cardItems),
             const SizedBox(height: 20),
             const SectionTitle(title: 'Pengumuman'),
             const SizedBox(height: 15),
-            const HorizontalCardList(itemCount: 5),
+            HorizontalCardList(items: cardItems),
             const SizedBox(height: 20),
             const SectionTitle(title: 'Ikuti Kanal Video Kami'),
             const SizedBox(height: 15),
-            const HorizontalCardList(itemCount: 5),
+            HorizontalCardList(items: cardItems),
             const SizedBox(height: 20),
             Padding(
               padding: const EdgeInsets.all(20), 
