@@ -63,9 +63,9 @@ class HomePageState extends State<HomePage> {
         url: 'https://news.detik.com/',
       ),
       CardItem(
-        imageUrl: 'https://akcdn.detik.net.id/community/media/visual/2024/09/30/rapat-paripurna-akhir-periode-dpr-2019-2024-dwidetikcom-2_169.jpeg?w=700&q=90',
-        content: ' DPR Sahkan Revisi UU TNI Hari Ini',
-        url: 'https://news.detik.com/berita/d-7832107/dpr-sahkan-revisi-uu-tni-hari-ini',
+        imageUrl: 'https://akcdn.detik.net.id/community/media/visual/2022/10/12/kemacetan-tol-japek-akibat-perbaikan-jalan_169.jpeg?w=700&q=90',
+        content: ' Ada Truk Gangguan, Lalin Tol Bekasi Japek Arah Cikampek Macet',
+        url: 'https://news.detik.com/berita/d-7834068/ada-truk-gangguan-lalin-tol-bekasi-japek-arah-cikampek-macet',
       ),
       CardItem(
         imageUrl: 'https://picsum.photos/200/100?random=3',
