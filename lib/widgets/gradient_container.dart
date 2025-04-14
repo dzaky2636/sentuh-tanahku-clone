@@ -14,7 +14,7 @@ class GradientContainer extends StatelessWidget {
         gradient: LinearGradient(
           begin: Alignment.topCenter,
           end: Alignment.bottomCenter,
-          colors: [Colors.white.withOpacity(0.2), primaryColor!.withOpacity(0.1)],
+          colors: [Colors.white.withOpacity(0.1), primaryColor!.withOpacity(0.1)],
         ),
       ),
       child: SingleChildScrollView(

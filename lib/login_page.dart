@@ -17,76 +17,78 @@ class LoginPage extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      body: Container(
+      body: SingleChildScrollView(
+      child: Container(
         decoration: BoxDecoration(
-          color: backgroundColor,
+        color: backgroundColor,
         ),
         child: Column(
-          children: [
-            Padding(
-              padding: EdgeInsets.all(15), 
-              child: Align(alignment: Alignment.centerLeft, child: BackButton())
+        children: [
+          Padding(
+          padding: EdgeInsets.all(15), 
+          child: Align(alignment: Alignment.centerLeft, child: BackButton())
+          ),
+          Padding(
+          padding: const EdgeInsets.all(20.0),
+          child: Column(
+            mainAxisAlignment: MainAxisAlignment.start,
+            crossAxisAlignment: CrossAxisAlignment.stretch,
+            children: [
+            const PageHeading(text: 'Login untuk memulai'), 
+            const SizedBox(height: 7),
+            const PageHeadingSubtitle(text: 'Masukkan email/username & password kamu'),
+            const SizedBox(height: 30),
+            const TextInput(
+              labelText: 'Email/Username',
+              hintText: 'Masukkan Email atau Username',
             ),
-            Padding(
-              padding: const EdgeInsets.all(20.0),
-              child: Column(
-                mainAxisAlignment: MainAxisAlignment.start,
-                crossAxisAlignment: CrossAxisAlignment.stretch,
-                children: [
-                  const PageHeading(text: 'Login untuk memulai'), 
-                  const SizedBox(height: 7),
-                  const PageHeadingSubtitle(text: 'Masukkan email/username & password kamu'),
-                  const SizedBox(height: 30),
-                  const TextInput(
-                    labelText: 'Email/Username',
-                    hintText: 'Masukkan Email atau Username',
-                  ),
-                  const SizedBox(height: 20),
-                  const PasswordInput(
-                    labelText: 'Password',
-                    hintText: 'Masukkan Password',
-                  ), 
-                  ForgotPasswordButton(
-                    onPressed: () {
-                      Navigator.push(
-                        context,
-                        MaterialPageRoute(builder: (context) => const ForgetPasswordPage()),
-                      );
-                    },
-                  ),
-                  const SizedBox(height: 20),
-                  CustomElevatedButton(
-                    onPressed: () {
-                      // Login
-                    },
-                    label: 'Login'
-                  ),
-                  const SizedBox(height: 20),
-                  const DividerWithText(text: 'atau'),
-                  const SizedBox(height: 20),
-                  CustomElevatedButton(
-                    onPressed: () {
-                      // Login with Identitas Kependudukan Digital functionality here
-                    },
-                    label: 'Login dengan Alternatif',
-                    iconPath: 'assets/images/sentuh_tanahku_logo_withborder.png',
-                  ),
-                ],
-              ),
-            ),
-            Spacer(),
-            AccountPrompt(
-              promptText: 'Belum punya akun? ',
-              actionText: 'Daftar',
+            const SizedBox(height: 20),
+            const PasswordInput(
+              labelText: 'Password',
+              hintText: 'Masukkan Password',
+            ), 
+            ForgotPasswordButton(
               onPressed: () {
-                Navigator.push(
-                  context,
-                  MaterialPageRoute(builder: (context) => const DaftarPage()),
-                );
+              Navigator.push(
+                context,
+                MaterialPageRoute(builder: (context) => const ForgetPasswordPage()),
+              );
               },
             ),
-          ],
+            const SizedBox(height: 20),
+            CustomElevatedButton(
+              onPressed: () {
+              // Login
+              },
+              label: 'Login'
+            ),
+            const SizedBox(height: 20),
+            const DividerWithText(text: 'atau'),
+            const SizedBox(height: 20),
+            CustomElevatedButton(
+              onPressed: () {
+              // Login with Identitas Kependudukan Digital functionality here
+              },
+              label: 'Login dengan Alternatif',
+              iconPath: 'assets/images/sentuh_tanahku_logo_withborder.png',
+            ),
+            ],
+          ),
+          ),
+          const SizedBox(height: 20),
+          AccountPrompt(
+          promptText: 'Belum punya akun? ',
+          actionText: 'Daftar',
+          onPressed: () {
+            Navigator.push(
+            context,
+            MaterialPageRoute(builder: (context) => const DaftarPage()),
+            );
+          },
+          ),
+        ],
         ),
+      ),
       ),
     );
   }

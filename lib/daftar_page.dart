@@ -15,75 +15,77 @@ class DaftarPage extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      body: Container(
+      body: SingleChildScrollView(
+      child: Container(
         decoration: BoxDecoration(
-          color: backgroundColor, 
+        color: backgroundColor,
         ),
         child: Column(
-          children: [
-            Padding(
-              padding: EdgeInsets.all(15), 
-              child: Align(alignment: Alignment.centerLeft, child: BackButton())
+        children: [
+          Padding(
+          padding: EdgeInsets.all(15),
+          child: Align(alignment: Alignment.centerLeft, child: BackButton()),
+          ),
+          Padding(
+          padding: const EdgeInsets.all(20.0),
+          child: Column(
+            mainAxisAlignment: MainAxisAlignment.start,
+            crossAxisAlignment: CrossAxisAlignment.stretch,
+            children: [
+            const PageHeading(text: 'Daftar untuk memulai'),
+            const SizedBox(height: 7),
+            const PageHeadingSubtitle(text: 'Masukkan detail kamu untuk mendaftar'),
+            const SizedBox(height: 30),
+            const TextInput(
+              labelText: 'Nama Lengkap',
+              hintText: 'Masukkan Nama Lengkap',
             ),
-            Padding(
-              padding: const EdgeInsets.all(20.0),
-              child: Column(
-                mainAxisAlignment: MainAxisAlignment.start,
-                crossAxisAlignment: CrossAxisAlignment.stretch,
-                children: [
-                  const PageHeading(text: 'Daftar untuk memulai'),
-                  const SizedBox(height: 7),
-                  const PageHeadingSubtitle(text: 'Masukkan detail kamu untuk mendaftar'),
-                  const SizedBox(height: 30),
-                  const TextInput(
-                    labelText: 'Nama Lengkap',
-                    hintText: 'Masukkan Nama Lengkap',
-                  ),
-                  const SizedBox(height: 20),
-                  const TextInput(
-                    labelText: 'Email',
-                    hintText: 'Masukkan Email',
-                  ),
-                  const SizedBox(height: 20),
-                  const PasswordInput(
-                    labelText: 'Password',
-                    hintText: 'Masukkan Password',
-                  ),
-                  const SizedBox(height: 20),
-                  const PasswordInput(
-                    labelText: 'Konfirmasi Password',
-                    hintText: 'Masukkan Password lagi',
-                  ),
-                  const SizedBox(height: 20),
-                  CustomElevatedButton(
-                    onPressed: () {
-                      // Register functionality here
-                    },
-                    label: 'Daftar'
-                  ),
-                  const SizedBox(height: 20),
-                  SecondaryCustomElevatedButton(
-                    onPressed: () {
-                      // FAQ functionality here
-                    },
-                    label: 'FAQ / Pusat Bantuan'
-                  )
-                ],
-              ),
+            const SizedBox(height: 20),
+            const TextInput(
+              labelText: 'Email',
+              hintText: 'Masukkan Email',
             ),
-            Spacer(),
-            AccountPrompt(
-              promptText: 'Sudah punya akun? ',
-              actionText: 'Login',
+            const SizedBox(height: 20),
+            const PasswordInput(
+              labelText: 'Password',
+              hintText: 'Masukkan Password',
+            ),
+            const SizedBox(height: 20),
+            const PasswordInput(
+              labelText: 'Konfirmasi Password',
+              hintText: 'Masukkan Password lagi',
+            ),
+            const SizedBox(height: 20),
+            CustomElevatedButton(
               onPressed: () {
-                Navigator.push(
-                  context,
-                  MaterialPageRoute(builder: (context) => const LoginPage()),
-                );
+              // Register functionality here
               },
-            )
-          ],
+              label: 'Daftar',
+            ),
+            const SizedBox(height: 20),
+            SecondaryCustomElevatedButton(
+              onPressed: () {
+              // FAQ functionality here
+              },
+              label: 'FAQ / Pusat Bantuan',
+            ),
+            ],
+          ),
+          ),
+          const SizedBox(height: 20),
+          AccountPrompt(
+          promptText: 'Sudah punya akun? ',
+          actionText: 'Login',
+          onPressed: () {
+            Navigator.push(
+            context,
+            MaterialPageRoute(builder: (context) => const LoginPage()),
+            );
+          },
+          ),
+        ],
         ),
+      ),
       ),
     );
   }
