@@ -19,7 +19,7 @@ class LoginPage extends StatelessWidget {
     return Scaffold(
       body: Container(
         decoration: BoxDecoration(
-          color: primaryColor!.withOpacity(0.05), 
+          color: backgroundColor,
         ),
         child: Column(
           children: [

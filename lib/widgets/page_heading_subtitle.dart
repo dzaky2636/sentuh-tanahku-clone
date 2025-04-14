@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import '../settings.dart';
 
 class PageHeadingSubtitle extends StatelessWidget {
   final String text;
@@ -9,9 +10,9 @@ class PageHeadingSubtitle extends StatelessWidget {
   Widget build(BuildContext context) {
     return Text(
       text,
-      style: const TextStyle(
+      style: TextStyle(
         fontSize: 16,
-        color: Colors.grey,
+        color: secondaryTextColor,
       ),
       textAlign: TextAlign.start,
     );

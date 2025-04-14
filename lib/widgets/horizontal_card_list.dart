@@ -9,6 +9,10 @@ class HorizontalCardList extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    const double cardWidth = 200.0;
+    const double cardHeight = 191.0;
+    const double imageHeight = 120.0;
+
     return SingleChildScrollView(
       scrollDirection: Axis.horizontal,
       child: Row(
@@ -29,8 +33,9 @@ class HorizontalCardList extends StatelessWidget {
                 shape: RoundedRectangleBorder(
                   borderRadius: BorderRadius.circular(10.0),
                 ),
-                child: Container(
-                  width: 200,
+                child: SizedBox(
+                  width: cardWidth,
+                  height: cardHeight, 
                   child: Column(
                     crossAxisAlignment: CrossAxisAlignment.start,
                     children: [
@@ -41,8 +46,8 @@ class HorizontalCardList extends StatelessWidget {
                         ),
                         child: Image.network(
                           item.imageUrl,
-                          height: 100,
-                          width: 200,
+                          height: imageHeight, 
+                          width: cardWidth,
                           fit: BoxFit.cover,
                         ),
                       ),
@@ -53,6 +58,8 @@ class HorizontalCardList extends StatelessWidget {
                           style: const TextStyle(
                             fontSize: 12,
                           ),
+                          maxLines: 3, 
+                          overflow: TextOverflow.ellipsis, 
                         ),
                       ),
                     ],

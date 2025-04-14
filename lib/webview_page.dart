@@ -88,16 +88,27 @@ Page resource error:
     _controller = controller;
   }
 
+  Future<bool> _handleBackPressed() async {
+    if (await _controller.canGoBack()) {
+      await _controller.goBack();
+      return false;
+    }
+    return true;
+  }
+
   @override
   Widget build(BuildContext context) {
-    return Scaffold(
-      appBar: AppBar(
-        title: const Text('WebView'),
-        actions: <Widget>[
-          NavigationControls(webViewController: _controller),
-        ],
+    return WillPopScope(
+      onWillPop: _handleBackPressed, 
+      child: Scaffold(
+        appBar: AppBar(
+          title: const Text('WebView'),
+          actions: <Widget>[
+            NavigationControls(webViewController: _controller),
+          ],
+        ),
+        body: WebViewWidget(controller: _controller),
       ),
-      body: WebViewWidget(controller: _controller),
     );
   }
 }

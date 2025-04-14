@@ -1,6 +1,5 @@
 import 'package:flutter/material.dart';
 import '../settings.dart';
-import '../daftar_page.dart';
 
 class AccountPrompt extends StatelessWidget {
   final String promptText;
@@ -24,7 +23,7 @@ class AccountPrompt extends StatelessWidget {
           Text(
             promptText,
             style: TextStyle(
-              color: primaryColor,
+              color: secondaryColor,
               fontSize: 16,
             ),
           ),
@@ -33,7 +32,7 @@ class AccountPrompt extends StatelessWidget {
             child: Text(
               actionText,
               style: TextStyle(
-                color: primaryColor,
+                color: secondaryColor,
                 fontSize: 16,
                 fontWeight: FontWeight.bold,
               ),

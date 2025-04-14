@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import '../settings.dart';
 
 class ButtonRow extends StatelessWidget {
   final int buttonCount;
@@ -30,9 +31,9 @@ class ButtonRow extends StatelessWidget {
                   const SizedBox(height: 5),
                   Text(
                     'Button $index',
-                    style: const TextStyle(
+                    style: TextStyle(
                       fontSize: 12,
-                      color: Colors.black,
+                      color: primaryTextColor,
                     ),
                   ),
                 ],

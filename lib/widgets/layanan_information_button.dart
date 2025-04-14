@@ -18,7 +18,7 @@ class LayananInformationButton extends StatelessWidget {
     return ElevatedButton(
       onPressed: onPressed,
       style: ElevatedButton.styleFrom(
-        backgroundColor: isActive ? primaryColor : Colors.white,
+        backgroundColor: isActive ? secondaryColor : Colors.white,
         padding: const EdgeInsets.symmetric(horizontal: 14.0, vertical: 1.0),
         shape: RoundedRectangleBorder(
           borderRadius: BorderRadius.circular(11.0),
