@@ -2,35 +2,32 @@ import 'package:flutter/material.dart';
 import '../settings.dart';
 
 class ButtonRow extends StatelessWidget {
-  final int buttonCount;
+  final List<Map<String, dynamic>> buttons; // List of button data (text, image, and onTap)
 
-  const ButtonRow({super.key, required this.buttonCount});
+  const ButtonRow({super.key, required this.buttons});
 
   @override
   Widget build(BuildContext context) {
     return Container(
       padding: const EdgeInsets.symmetric(vertical: 20.0),
       child: SingleChildScrollView(
-      scrollDirection: Axis.horizontal,
-      child: 
-        Row(
-          children: List.generate(buttonCount, (index) {
+        scrollDirection: Axis.horizontal,
+        child: Row(
+          children: buttons.map((button) {
             return Padding(
               padding: const EdgeInsets.symmetric(horizontal: 15.0),
               child: Column(
                 children: [
                   GestureDetector(
-                    onTap: () {
-                      // button functionality here
-                    },
+                    onTap: button['onTap'], // Use the onTap callback from the array
                     child: CircleAvatar(
                       radius: 25,
-                      backgroundImage: AssetImage('assets/images/image_$index.png'),
+                      backgroundImage: AssetImage(button['image']), // Use the image from the array
                     ),
                   ),
                   const SizedBox(height: 5),
                   Text(
-                    'Button $index',
+                    button['text'], // Use the text from the array
                     style: TextStyle(
                       fontSize: 12,
                       color: primaryTextColor,
@@ -39,8 +36,8 @@ class ButtonRow extends StatelessWidget {
                 ],
               ),
             );
-          }),
-        )
+          }).toList(),
+        ),
       ),
     );
   }

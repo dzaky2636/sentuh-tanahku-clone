@@ -32,6 +32,7 @@ class Carousel extends StatelessWidget {
               viewportFraction: 1,
               aspectRatio: 16 / 8,
             ),
+            // change this to the intended thing
             items: [
               'https://picsum.photos/200/100?random=${1}',
               'https://picsum.photos/200/100?random=${2}',

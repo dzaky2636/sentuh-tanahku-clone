@@ -3,9 +3,16 @@ import 'button_row.dart';
 import '../settings.dart';
 
 class GradientContainer extends StatelessWidget {
-  final int buttonCount;
+  final List<Map<String, dynamic>> layananButtons; 
+  final List<Map<String, dynamic>> informasiButtons; 
+  final bool isLayananActive;
 
-  const GradientContainer({super.key, required this.buttonCount});
+  const GradientContainer({
+    super.key,
+    required this.layananButtons,
+    required this.informasiButtons,
+    required this.isLayananActive,
+  });
 
   @override
   Widget build(BuildContext context) {
@@ -19,7 +26,9 @@ class GradientContainer extends StatelessWidget {
       ),
       child: SingleChildScrollView(
         scrollDirection: Axis.horizontal,
-        child: ButtonRow(buttonCount: buttonCount),
+        child: ButtonRow(
+          buttons: isLayananActive ? layananButtons : informasiButtons,
+        ),
       ),
     );
   }

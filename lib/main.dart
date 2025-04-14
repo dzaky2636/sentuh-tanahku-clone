@@ -56,6 +56,60 @@ class HomePageState extends State<HomePage> {
   Widget build(BuildContext context) {
     final double size = 150.0;
 
+    final List<Map<String, dynamic>> layananButtons = [
+      {
+        'text': 'Layanan 1',
+        'image': 'assets/images/image_1.png',
+        'onTap': () => print('Layanan 1 tapped'),
+      },
+      {
+        'text': 'Layanan 2',
+        'image': 'assets/images/image_2.png',
+        'onTap': () => print('Layanan 2 tapped'),
+      },
+      {
+        'text': 'Layanan 3',
+        'image': 'assets/images/image_3.png',
+        'onTap': () => print('Layanan 3 tapped'),
+      },
+    ];
+
+    final List<Map<String, dynamic>> informasiButtons = [
+      {
+        'text': 'Informasi 1',
+        'image': 'assets/images/image_4.png',
+        'onTap': () => print('Informasi 1 tapped'),
+      },
+      {
+        'text': 'Informasi 2',
+        'image': 'assets/images/image_5.png',
+        'onTap': () => print('Informasi 2 tapped'),
+      },
+      {
+        'text': 'Informasi 3',
+        'image': 'assets/images/image_6.png',
+        'onTap': () => print('Informasi 3 tapped'),
+      },
+    ];
+
+    final List<Map<String, dynamic>> laciButtons = [
+      {
+        'text': 'Laci 1',
+        'image': 'assets/images/image_7.png',
+        'onTap': () => print('Laci 1 tapped'),
+      },
+      {
+        'text': 'Laci 2',
+        'image': 'assets/images/image_8.png',
+        'onTap': () => print('Laci 2 tapped'),
+      },
+      {
+        'text': 'Laci 3',
+        'image': 'assets/images/image_9.png',
+        'onTap': () => print('Laci 3 tapped'),
+      },
+    ];
+
     final List<CardItem> cardItems = [
       CardItem(
         imageUrl: 'https://picsum.photos/200/100?random=1',
@@ -124,10 +178,14 @@ class HomePageState extends State<HomePage> {
               onInformasiPressed: _handleInformasiPressed,
             ),
             const SizedBox(height: 15),
-            GradientContainer(buttonCount: isLayananActive ? 7 : 4),
+            GradientContainer(
+              layananButtons: layananButtons,
+              informasiButtons: informasiButtons,
+              isLayananActive: isLayananActive,
+            ),
             const SizedBox(height: 30),
             const SectionTitle(title: 'Laci'),
-            const ButtonRow(buttonCount: 3),
+            ButtonRow(buttons: laciButtons),
             const SizedBox(height: 20),
             const SectionTitle(title: 'Siaran Pers Kementrian'),
             const SizedBox(height: 15),
