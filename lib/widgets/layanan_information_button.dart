@@ -19,7 +19,7 @@ class LayananInformationButton extends StatelessWidget {
       onPressed: onPressed,
       style: ElevatedButton.styleFrom(
         backgroundColor: isActive ? secondaryColor : Colors.white,
-        padding: const EdgeInsets.symmetric(horizontal: 14.0, vertical: 1.0),
+        padding: const EdgeInsets.symmetric(horizontal: 12.0),
         shape: RoundedRectangleBorder(
           borderRadius: BorderRadius.circular(11.0),
         ),
@@ -28,7 +28,7 @@ class LayananInformationButton extends StatelessWidget {
       child: Text(
         label,
         style: TextStyle(
-          fontSize: 12,
+          fontSize: 11,
           color: isActive ? Colors.white : Colors.grey,
         ),
       ),
