@@ -2,7 +2,8 @@ import 'package:flutter/material.dart';
 import '../settings.dart';
 
 class ButtonRow extends StatelessWidget {
-  final List<Map<String, dynamic>> buttons; // List of button data (text, image, and onTap)
+  final List<Map<String, dynamic>>
+  buttons;
 
   const ButtonRow({super.key, required this.buttons});
 
@@ -13,30 +14,64 @@ class ButtonRow extends StatelessWidget {
       child: SingleChildScrollView(
         scrollDirection: Axis.horizontal,
         child: Row(
-          children: buttons.map((button) {
-            return Padding(
-              padding: const EdgeInsets.symmetric(horizontal: 15.0),
-              child: Column(
-                children: [
-                  GestureDetector(
-                    onTap: button['onTap'], // Use the onTap callback from the array
-                    child: CircleAvatar(
-                      radius: 25,
-                      backgroundImage: AssetImage(button['image']), // Use the image from the array
-                    ),
+          mainAxisAlignment: MainAxisAlignment.start,
+          crossAxisAlignment: CrossAxisAlignment.start,
+          children:
+              buttons.map((button) {
+                return Padding(
+                  padding: const EdgeInsets.symmetric(horizontal: 15.0),
+                  child: Column(
+                    mainAxisAlignment: MainAxisAlignment.start,
+                    children: [
+                      GestureDetector(
+                        onTap: button['onTap'],
+                        child: Container(
+                          decoration: BoxDecoration(
+                          shape: BoxShape.circle,
+                          gradient: LinearGradient(
+                            colors: [primaryColor ?? Colors.red, Colors.purple],
+                            begin: Alignment.topLeft,
+                            end: Alignment.bottomRight,
+                          ),
+                          boxShadow: [
+                            BoxShadow(
+                            color: Colors.grey.withOpacity(0.5),
+                            spreadRadius: 2,
+                            blurRadius: 5,
+                            offset: Offset(0, 3),
+                            ),
+                          ],
+                          ),
+                          child: CircleAvatar(
+                          backgroundColor: Colors.transparent,
+                          radius: 25,
+                          child: Icon(
+                            button['icon'],
+                            size: 25,
+                            color: Colors.white,
+                          ),
+                          ),
+                        ),
+                      ),
+                      const SizedBox(height: 5),
+
+                      // text is allowed to overflow, if overflow, it will be moved down
+                      Container(
+                        constraints: BoxConstraints(maxWidth: 60, minHeight: 23),
+                        child: Text(
+                          button['text'],
+                          style: TextStyle(
+                            fontSize: 8,
+                            color: primaryTextColor,
+                          ),
+                          overflow: TextOverflow.visible,
+                          textAlign: TextAlign.center,
+                        ),
+                      ),
+                    ],
                   ),
-                  const SizedBox(height: 5),
-                  Text(
-                    button['text'], // Use the text from the array
-                    style: TextStyle(
-                      fontSize: 12,
-                      color: primaryTextColor,
-                    ),
-                  ),
-                ],
-              ),
-            );
-          }).toList(),
+                );
+              }).toList(),
         ),
       ),
     );

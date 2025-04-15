@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter/cupertino.dart';
 import 'widgets/carousel.dart';
 import 'widgets/button_row.dart';
 import 'widgets/section_title.dart';
@@ -58,54 +59,79 @@ class HomePageState extends State<HomePage> {
 
     final List<Map<String, dynamic>> layananButtons = [
       {
-        'text': 'Layanan 1',
-        'image': 'assets/images/image_1.png',
+        'text': 'Cari Bidang',
+        'icon': CupertinoIcons.doc_person_fill,
         'onTap': () => print('Layanan 1 tapped'),
       },
       {
-        'text': 'Layanan 2',
-        'image': 'assets/images/image_2.png',
+        'text': 'Cari Berkas',
+        'icon': CupertinoIcons.doc_chart_fill,
         'onTap': () => print('Layanan 2 tapped'),
       },
       {
-        'text': 'Layanan 3',
-        'image': 'assets/images/image_3.png',
+        'text': 'Antrian Online',
+        'icon': CupertinoIcons.rectangle_stack_person_crop_fill,
+        'onTap': () => print('Layanan 3 tapped'),
+      },
+      {
+        'text': 'Info Layanan',
+        'icon': CupertinoIcons.info_circle_fill,
+        'onTap': () => print('Layanan 3 tapped'),
+      },
+      {
+        'text': 'Mitra Kerja',
+        'icon': CupertinoIcons.person_3_fill,
+        'onTap': () => print('Layanan 3 tapped'),
+      },
+      {
+        'text': 'Buku Tamu',
+        'icon': CupertinoIcons.doc_on_clipboard_fill,
         'onTap': () => print('Layanan 3 tapped'),
       },
     ];
 
     final List<Map<String, dynamic>> informasiButtons = [
       {
-        'text': 'Informasi 1',
-        'image': 'assets/images/image_4.png',
+        'text': 'Kantor Pertanahan',
+        'icon': CupertinoIcons.building_2_fill,
         'onTap': () => print('Informasi 1 tapped'),
       },
       {
-        'text': 'Informasi 2',
-        'image': 'assets/images/image_5.png',
+        'text': 'Bantuan',
+        'icon': CupertinoIcons.question_circle_fill,
         'onTap': () => print('Informasi 2 tapped'),
       },
       {
-        'text': 'Informasi 3',
-        'image': 'assets/images/image_6.png',
+        'text': 'Website',
+        'icon': CupertinoIcons.globe,
+        'onTap': () => print('Informasi 3 tapped'),
+      },
+      {
+        'text': 'JDIH',
+        'icon': CupertinoIcons.book_fill,
+        'onTap': () => print('Informasi 3 tapped'),
+      },
+      {
+        'text': 'PPID',
+        'icon': CupertinoIcons.person_fill,
         'onTap': () => print('Informasi 3 tapped'),
       },
     ];
 
     final List<Map<String, dynamic>> laciButtons = [
       {
-        'text': 'Laci 1',
-        'image': 'assets/images/image_7.png',
+        'text': 'Sertipikatku',
+        'icon': CupertinoIcons.checkmark_seal_fill,
         'onTap': () => print('Laci 1 tapped'),
       },
       {
-        'text': 'Laci 2',
-        'image': 'assets/images/image_8.png',
+        'text': 'Aktaku',
+        'icon': CupertinoIcons.checkmark_circle_fill,
         'onTap': () => print('Laci 2 tapped'),
       },
       {
-        'text': 'Laci 3',
-        'image': 'assets/images/image_9.png',
+        'text': 'Berkasku',
+        'icon': CupertinoIcons.archivebox_fill,
         'onTap': () => print('Laci 3 tapped'),
       },
     ];
@@ -118,7 +144,7 @@ class HomePageState extends State<HomePage> {
       ),
       CardItem(
         imageUrl: 'https://akcdn.detik.net.id/community/media/visual/2022/10/12/kemacetan-tol-japek-akibat-perbaikan-jalan_169.jpeg?w=700&q=90',
-        content: ' Ada Truk Gangguan, Lalin Tol Bekasi Japek Arah Cikampek Macet',
+        content: 'Ada Truk Gangguan, Lalin Tol Bekasi Japek Arah Cikampek Macet',
         url: 'https://news.detik.com/berita/d-7834068/ada-truk-gangguan-lalin-tol-bekasi-japek-arah-cikampek-macet',
       ),
       CardItem(

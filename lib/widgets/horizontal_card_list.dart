@@ -29,7 +29,7 @@ class HorizontalCardList extends StatelessWidget {
                 );
               },
               child: Card(
-                elevation: 5,
+                elevation: 2,
                 shape: RoundedRectangleBorder(
                   borderRadius: BorderRadius.circular(10.0),
                 ),
@@ -56,7 +56,7 @@ class HorizontalCardList extends StatelessWidget {
                         child: Text(
                           item.content,
                           style: const TextStyle(
-                            fontSize: 12,
+                            fontSize: 11,
                           ),
                           maxLines: 3, 
                           overflow: TextOverflow.ellipsis, 
