@@ -29,7 +29,7 @@ class ButtonRow extends StatelessWidget {
                           decoration: BoxDecoration(
                           shape: BoxShape.circle,
                           gradient: LinearGradient(
-                            colors: [primaryColor ?? Colors.red, Colors.purple],
+                            colors: [primaryColor ?? Colors.red, buttonHighlightColor ?? Colors.purple],
                             begin: Alignment.topLeft,
                             end: Alignment.bottomRight,
                           ),
@@ -57,7 +57,7 @@ class ButtonRow extends StatelessWidget {
 
                       // text is allowed to overflow, if overflow, it will be moved down
                       Container(
-                        constraints: BoxConstraints(maxWidth: 60, minHeight: 23),
+                        constraints: BoxConstraints(maxWidth: 50, minHeight: 23),
                         child: Text(
                           button['text'],
                           style: TextStyle(
